@@ -1,0 +1,38 @@
+﻿@model DatePickerMvc4.Models.MyClass
+
+@{
+    ViewBag.Title = "New record";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Create</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>MyClass</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MyDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MyDate)
+            @Html.ValidationMessageFor(model => model.MyDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+@*@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            $(".date").datepicker();
+        });
+    </script>
+}*@
